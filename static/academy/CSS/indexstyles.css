@@ -1,0 +1,138 @@
+.maindiv {
+    display: inline-block;
+    width: 1200px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.maindiv>h1 {
+    color: rgb(149, 164, 231);
+    margin-left: 10px;
+    display: inline;
+}
+.maindiv>h3 {
+    color: rgb(149, 164, 231);
+    margin-left: 10px;
+}
+
+.certificate{
+    margin: 3% 20%;
+}
+
+.maindiv>h4 {
+    color: rgb(149, 164, 231);
+    margin-left: 550px;
+    display: inline;
+}
+
+.empty {
+    color: rgb(149, 164, 231);
+    margin: 15px;
+    display: inline-block;
+}
+
+.course-row {
+    background-color: rgba(37, 38, 146, 0.541);
+    width: 900px;
+    height: 50px;
+    border-radius: 15px;
+    margin-left: 100px;
+    margin-top: 20px;
+    padding-top: 7px;
+    padding-left: 20px;
+
+}
+
+.course-row>label {
+    
+    color: rgb(149, 164, 231);
+    margin-top: 5px;
+
+}
+
+.title{
+    width: 70px;
+}
+
+.professor{
+    margin-left: 60px; width: 250px;
+}
+
+.examdate{
+    width: 195px;margin-left: 20px;
+}
+
+
+
+@media only screen and (max-width: 880px), only screen and (max-device-width: 880px) {
+
+    .maindiv {
+        display: inline-block;
+        width: 90%;
+        margin-left: 3%;
+        margin-top: 10px;
+    }
+    
+    .maindiv>h1 {
+        color: rgb(149, 164, 231);
+        margin-left: 140px;
+        
+    }
+    .maindiv>h5 {
+        color: rgb(149, 164, 231);
+        margin-left: 140px;
+        
+    }
+    .maindiv>h3 {
+        color: rgb(149, 164, 231);
+        margin-left: 10px;
+    }
+    
+    .certificate{
+        margin: 3% 20%;
+    }
+    
+    .maindiv>h4 {
+        color: rgb(149, 164, 231);
+        margin-left: 50%;
+        display: inline;
+    }
+    
+    .empty {
+        color: rgb(149, 164, 231);
+        margin: 15px;
+        display: inline-block;
+    }
+    
+    .course-row {
+        background-color: rgba(37, 38, 146, 0.541);
+        width: 90%;
+        height: 100px;
+        border-radius: 15px;
+        margin-left: 100px;
+        margin-top: 20px;
+        padding-top: 7px;
+        padding-left: 20px;
+    
+    }
+    
+    .course-row>label {
+        color: rgb(149, 164, 231);
+        margin-top: 20px;
+        font-size: x-large;
+    }
+    
+    .title{
+        width: 10%;
+    }
+    
+    .professor{
+        margin-left: 60px; width: 30%;
+    }
+    
+    .examdate{
+        width: 30%;margin-left: 20px;
+    }
+   
+    
+}
