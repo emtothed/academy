@@ -1,0 +1,60 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover ;
+    width: 100%;
+    height: 100%;
+
+}
+
+.imgred {
+    border-radius: 100%;
+}
+
+.container {
+    margin: 0px 80px;
+    margin-top: 20px;
+    width: 100%;
+
+}
+
+nav {
+    position: relative;
+    border-radius: 15px;
+    background-color: rgba(37, 38, 146, 0.541);
+    color: aliceblue;
+
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(145, 161, 231);
+}
+
+.navbar ul li:hover a {
+    color: white;
+}
+
+.navbar ul li label {
+    text-decoration: none;
+    color: rgb(69, 100, 236);
+}
+
+.navbar ul li:hover label {
+    color: rgb(69, 100, 236);
+}
+
+#menu{
+    display: none;
+}
+
+@media only screen and (max-width: 880px), only screen and (max-device-width: 880px) {
+    .container {
+        display: none;
+    }
+    #menu{
+        display: block;
+        margin-top: 30px;
+
+    }
+    
+}
