@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="{% static 'academy/CSS/loginstyles.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'academy/images/bc.jpg' %}");
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                document.body.style.background = "none";
+                document.body.innerHTML = "";
+                const element = document.createElement('h1');
+                element.innerHTML = " Please rotate your device and reload to load the page properly."
+                document.body.style.textAlign = 'center';
+                document.body.style.marginTop = '290px';
+                document.body.append(element);
+            }
+            else {
+                const btns = document.querySelector('#btns');
+                const form = document.querySelector('#loginform');
+                const reg = document.querySelector('#reg');
+                reg.style.animationPlayState = 'paused';
+                btns.style.animationPlayState = 'paused';
+                form.style.animationPlayState = 'paused';
+
+
+                document.querySelector('#login').onclick = () => {
+                    reg.style.animationPlayState = 'running';
+                    btns.style.animationPlayState = 'running';
+                    form.style.animationPlayState = 'running';
+                    document.querySelector('#login').onclick = () => {
+                        form.submit();
+                    }
+                }
+            }
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="headerdiv">
+        <p class="header">Welcome to Hogwarts tech academy</p>
+        <p class="subh">Your gateway to magical world of the computer science</p>
+        {%if message%}
+        <h4 id="msg">{{message}}</h4>
+        {%endif%}
+    </div>
+
+    <form action="{% url 'login'%}" method="post" id="loginform">
+        {% csrf_token %}
+        <input type="text" name="username" class="form-control" placeholder="Username"><br>
+        <input type="password" name="password" class="form-control" placeholder="Password">
+    </form>
+    <div class="btns" id="btns">
+
+        <button class="btn btn-light" id="login">{% csrf_token %} Login </button>
+        <a href="{% url 'register'%}" class="btn btn-light" id="reg">Register</a>
+    </div>
+</body>
+
+</html>

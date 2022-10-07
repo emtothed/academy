@@ -1,0 +1,34 @@
+{% extends 'academy/layout.html' %}
+{% load static %}
+{%block style%}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'academy/CSS/scoresstyles.css' %}" rel="stylesheet">
+{%endblock%}
+
+{%block script%}
+{%endblock%}
+
+{% block body %}
+<div class="maindiv">
+    <h1>Your scores:</h1>
+    {% for score in scores%}
+    {% if  score.score > 6 %}
+    <div class="score-row">
+        <label class="course" ><b>{{score.course}}</b></label>
+        <label class="score" ><b>Latest score : </b>   {{score.score}} / 10.0</label>
+        <label class="stat" ><b>You have passed the exam</b></label>
+
+    </div>
+    {% else %}
+    <div class="failed-row" >
+        <label class="course" ><b>{{score.course}}</b></label>
+        <label class="score" ><b>Latest score : </b>   {{score.score}} / 10.0</label>
+        <label class="stat" ><b>You have failed the exam</b></label>
+    </div>
+    {% endif %}
+    {%empty%}
+    <h5 class="empty">Currently you don't have any score.</h5>
+    {%endfor%}
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'academy/layout.html' %}
+{% load static %}
+
+{%block style%}
+<link href="{% static 'academy/CSS/schedulestyles.css' %}" rel="stylesheet">
+{%endblock%}
+
+{%block script%}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch(`/scheduleget`)
+            .then(response => response.json())
+            .then(courses => {
+                console.log(courses);
+                for (let i = 0; i < courses.length; i++) {
+                    const course = courses[i];
+                    document.querySelector(`#${course.day}${course.time}`).innerHTML = course.title;
+
+                }
+            });
+    });
+</script>
+{%endblock%}
+{% block body %}
+<div class="maindiv">
+    <h1>Your schedule:</h1>
+    <h6>Note: after you picked a course, you are not able to remove it from your schedule. </h6>
+    <div class="crsdiv">
+        <h4>Availabel courses:</h4>
+        {% for course in courses %}
+        <div class="sub-crs">
+            <div style="float: left;">
+                <label class="title">{{course.title}}</label><br>
+                <label class="time"> {{course.day}} {{course.time}}</label>
+            </div>
+            <button class="btn btn-primary addbutton"
+                onclick="add(this,'{{course.title}}','{{course.day}}{{course.time}}','{{taken}}')">Add</button>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="weekdiv">
+        <div class="weekhourlabel">
+            <label>9 - 10</label>
+            <label>10 - 11</label>
+            <label>11 - 12</label>
+            <label>12 - 13</label>
+        </div>
+        {% for weekday in weekdays%}
+        <div class="weekdaylabel">
+            <label> {{weekday}}</label>
+        </div>
+        <div class="weekdayrow">
+
+            {% for hour in hours%}
+            <div id="{{weekday}}{{hour}}" class="schedulediv"></div>
+            {%endfor%}
+        </div>
+        {%endfor%}
+    </div>
+
+</div>
+{% endblock %}

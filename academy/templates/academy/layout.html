@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Academy{% endblock %}</title>
+    <!-- JavaScript Bundle with Popper -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <link href="{% static 'academy/CSS/styles.css' %}" rel="stylesheet">
+
+    {% csrf_token %}
+    <script src="{% static 'academy/index.js' %}"></script>
+    {% block style %}
+    {% endblock %}
+    <style>
+        body {
+            background-image: url("{% static 'academy/images/bc2.jpg' %}");
+            padding-left: 25px;
+        }
+    </style>
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="{% static 'academy/images/logo.jpg' %}" alt="Logo" width="40" height="35"
+                        class="d-inline-block align-text-top imgred">
+                </a>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{% url 'index'%}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'schedule'%}">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'scores'%}">Scores</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav text-right">
+                        <li class="nav-item">
+                            <label class="nav-link"> Signed in as {{user.username}}</label>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout'%}">logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="dropdown show" id="menu">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Menu
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'index'%}">Home</a>
+            <a class="dropdown-item" href="{% url 'schedule'%}">Schedule</a>
+            <a class="dropdown-item" href="{% url 'scores'%}">Scores</a>
+            <a class="dropdown-item" href="{% url 'logout'%}">logout</a>
+        </div>
+    </div>
+    <div class="body">
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

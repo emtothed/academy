@@ -1,0 +1,75 @@
+{% extends 'academy/layout.html' %}
+{% load static %}
+{%block style%}
+<link href="{% static 'academy/CSS/examstyles.css' %}" rel="stylesheet">
+{%endblock%}
+
+{%block script%}
+<script src="{% static 'academy/exam.js' %}"></script>
+
+<script>
+    var seconds = 60;
+    var minutes = 9;
+    var i = 0;
+    var answer = [];
+    var title = "{{title}}";
+    var indexurl = "{% url 'scores' %}";
+    document.addEventListener('DOMContentLoaded', () => {
+
+        fetch(`/questsget/${title}`)
+            .then(response => response.json())
+            .then(questions => {
+
+                document.querySelector('#question').innerHTML =`This test has ${questions.length} questions and you have 10 minutes to answer them.`;
+                                
+                document.querySelector('#start').onclick = () => {
+                    changepage('start', questions.length);
+                    showquest(questions);
+                };
+
+
+                document.querySelector('#previous').onclick = () => {
+                    changepage('previous', questions.length);
+                    showquest(questions);
+                };
+
+
+                document.querySelector('#next').onclick = () => {
+                    if (i === questions.length - 1) {
+                        submitanswers(questions.length);
+                    }
+                    else {
+                        changepage('next', questions.length);
+                        showquest(questions);
+                    }
+                };
+            });
+    });
+
+
+</script>
+{%endblock%}
+
+{% block body %}
+<div class="maindiv">
+    <h1>{{title}} exam</h1>
+    <h2>remained time </h2>
+    <h2 id="time">10:00</h2>
+    <div class="exambox">
+        <h5 id="questnow"></h5>
+        <div class="questionbox" id="questionbox">
+            <h2 id="question"></h2>
+            <div id="answerbox">
+                <button class="btn btn-primary" style="margin-left: 330px;" id="start">Start the
+                    test</button>
+            </div>
+
+        </div>
+        <div class="btnbox" id="btnbox">
+            <button class="btn btn-primary" id="previous">Previous</button>
+            <button class="btn btn-primary" id="next">Next</button>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
