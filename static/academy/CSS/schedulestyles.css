@@ -1,0 +1,255 @@
+
+
+.maindiv {
+    display: inline-block;
+    width: 1200px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.maindiv>h1 {
+    color: rgb(149, 164, 231);
+    margin-left: 10px;
+}
+
+.maindiv>h6 {
+    color: rgb(149, 164, 231);
+    margin-left: 13px;
+    margin-bottom: 15px;
+}
+
+.crsdiv {
+    background-color: rgba(37, 38, 146, 0.541);
+    width: 360px;
+    height: 420px;
+    overflow: auto;
+    border-radius: 15px;
+    float: left;
+
+}
+
+.crsdiv>h4 {
+    margin-left: 20px;
+    margin-top: 14px;
+    color: rgb(149, 164, 231);
+}
+
+.sub-crs {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 68px;
+    width: 320px;
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+::-webkit-scrollbar-track{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.295);
+    border-radius: 30px;
+    
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.575);
+
+  }
+
+.title {
+    color: rgb(149, 164, 231);
+    font-size: 20px;
+    font-weight: 600;
+    width: 260px;
+}
+
+.time {
+    color: rgb(149, 164, 231);
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.addbutton {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.weekdiv {
+    background-color: rgba(37, 38, 146, 0.541);
+    width: 720px;
+    height: 420px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.weekdaylabel {
+    float: left;
+    width: 90px;
+    margin-left: 35px;
+    margin-top: 8px;
+    color: rgb(149, 164, 231);
+    font-size: 20px;
+
+}
+
+.weekhourlabel {
+    width: 600px;
+    height: 60px;
+    margin-left: 135px;
+    padding-top: 15px;
+
+}
+
+.weekhourlabel>label {
+    width: 110px;
+    margin-left: 15px;
+    text-align: center;
+    color: rgb(149, 164, 231);
+    font-size: 20px;
+}
+
+.schedulediv {
+    width: 100px;
+    height: 50px;
+    float: left;
+    background-color: rgba(214, 214, 245, 0.87);
+    margin-left: 30px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 12px;
+}
+
+.weekdayrow {
+    width: 700px;
+    height: 70px;
+
+}
+
+@media only screen and (max-width: 880px), only screen and (max-device-width: 880px) {
+
+    .maindiv {
+        display: inline-block;
+        width: 97%;
+        margin-left: 3%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .maindiv>h1 {
+        color: rgb(149, 164, 231);
+        margin-left: 50px;
+        display: inline;
+    }
+    .maindiv>h6 {
+        color: rgb(149, 164, 231);
+        margin-left: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .crsdiv {
+        background-color: rgba(37, 38, 146, 0.541);
+        width: 35%;
+        height: 620px;
+        overflow: auto;
+        border-radius: 15px;
+        float: left;
+    
+    }
+    
+    .crsdiv>h4 {
+        font-size: xx-large;
+        margin-left: 20px;
+        margin-top: 14px;
+        color: rgb(149, 164, 231);
+    }
+    
+    .sub-crs {
+        margin-top: 10px;
+        margin-left: 20px;
+        height: 20%;
+        width: 100%;
+    
+    }
+    .title {
+        color: rgb(149, 164, 231);
+        font-size: 40px;
+        font-weight: 600;
+        width: 260px;
+    }
+    
+    .time {
+        color: rgb(149, 164, 231);
+        font-size: 30px;
+        font-weight: 100;
+    }
+    .addbutton {
+        display: inline-block;
+        font-size: x-large;
+        margin-top: 30px;
+        height: 60px;
+        width: 120px;
+        margin-left: 50px;
+    }
+
+
+    .weekdiv {
+        background-color: rgba(37, 38, 146, 0.541);
+        width: 60%;
+        height: 620px;
+        border-radius: 15px;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+    
+    .weekdaylabel {
+        float: left;
+        width: 140px;
+        margin-left: 35px;
+        margin-top: 8px;
+        color: rgb(149, 164, 231);
+        font-size: 30px;
+    
+    }
+    
+    .weekhourlabel {
+        width: 80%;
+        height: 15%;
+        margin-left: 160px;
+        padding-top: 15px;
+    
+    }
+    
+    .weekhourlabel>label {
+        width: 95px;
+        margin-left: 60px;
+        text-align: center;
+        color: rgb(149, 164, 231);
+        font-size: 30px;
+    }
+    
+    .schedulediv {
+        width: 130px;
+        height: 70px;
+        float: left;
+        background-color: rgba(214, 214, 245, 0.87);
+        margin-left: 30px;
+        border-radius: 30px;
+        text-align: center;
+        padding: 16px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .weekdayrow {
+        width: 100%;
+        height: 18%;
+    
+    }
+}
