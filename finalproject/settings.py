@@ -79,6 +79,21 @@ DATABASES = {
        # 'ENGINE': 'django.db.backends.sqlite3',
        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
    # }
+    'default': {
+
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+         'NAME': 'nwdgmyrz',
+
+         'USER': 'nwdgmyrz',
+
+         'PASSWORD': 'g4MMw-ijIkxyfYq5cusUXA4fM7Qm-XYa',
+
+         'HOST': 'heffalump.db.elephantsql.com',
+
+         'PORT': '5432',
+
+     }
 }
 
 
